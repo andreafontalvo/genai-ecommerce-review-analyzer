@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  review-analyzer:
+    build: .
+    container_name: genai-review-analyzer
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
